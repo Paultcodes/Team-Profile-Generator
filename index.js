@@ -49,7 +49,7 @@ continuePrompt = () => {
         type: "list",
         name: "option",
         message: "What type of employee would you like to add?",
-        choices: ["Intern", "Engineer", "Exit"],
+        choices: ["Intern", "Engineer", "Exit And Build My Team"],
       },
     ])
     .then((optionData) => {
@@ -130,7 +130,7 @@ engineerPrompt = () => {
 
 completeHtml = (allInfo) => {
   fs.writeFile("./dist/main.html", allInfo, (err) =>
-    err ? console.log(err) : console.log("file created")
+    err ? console.log(err) : console.log("Your Team Was Successfully Created!")
   );
 };
 

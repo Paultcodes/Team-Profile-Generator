@@ -6,40 +6,41 @@ genHtml = (data) => {
     if (employeeRole === "Engineer") {
       const engineerInfo = generateEngineer(result);
       employeesHtmlCards.push(engineerInfo);
-    }
-
-    if (employeeRole === "Intern") {
+    } else if (employeeRole === "Intern") {
       const internInfo = generateIntern(result);
       employeesHtmlCards.push(internInfo);
-    }
-
-    if (employeeRole === "Manager") {
+    } else if (employeeRole === "Manager") {
       const managerInfo = generateManager(result);
       employeesHtmlCards.push(managerInfo);
     }
   }
   let joinedHtml = employeesHtmlCards.join("");
   let finalHtml = createHtml(joinedHtml);
-  console.log(joinedHtml)
   return finalHtml;
 };
 
 generateEngineer = (engineer) => {
   return `<div class="employee-card">
     <h2>${engineer.name}</h2>
-    <h3>${engineer.getRole()}</h3>
+    <h3><i class="fa-solid fa-code"></i> ${engineer.getRole()}</h3>
     <p>ID: ${engineer.id}</p>
-    <p>Email: <a href="#">${engineer.email}</a></p>
-    <p>GitHub: <a href="#">${engineer.getGithub()}</a></p>
+    <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
+      engineer.email
+    }" target="_blank">${engineer.email}</a>
+        </p>
+    <p>GitHub: <a href="https://github.com/Paultcodes?tab=repositories">${engineer.getGithub()}</a></p>
   </div>`;
 };
 
 generateIntern = (intern) => {
   return `<div class="employee-card">
       <h2>${intern.name}</h2>
-      <h3>${intern.getRole()}</h3>
+      <h3><i class="fa-solid fa-user-graduate"></i> ${intern.getRole()}</h3>
       <p>ID: ${intern.id}</p>
-      <p>Email: <a href="#">${intern.email}</a></p>
+      <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
+        intern.email
+      }" target="_blank">${intern.email}</a>
+        </p>
       <p>School: ${intern.getSchool()}</p>
     </div>`;
 };
@@ -47,9 +48,12 @@ generateIntern = (intern) => {
 generateManager = (manager) => {
   return `<div class="employee-card">
         <h2>${manager.name}</h2>
-        <h3>${manager.getRole()}</h3>
+        <h3><i class="fa-solid fa-mug-hot"></i> ${manager.getRole()}</h3>
         <p>ID: ${manager.id}</p>
-        <p>Email: <a href="#">${manager.email}</a></p>
+        <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
+          manager.email
+        }" target="_blank">${manager.email}</a>
+        </p>
         <p>Office Number: ${manager.officeNumber}</p>
       </div>`;
 };
@@ -78,7 +82,7 @@ createHtml = (info) => {
     <title>Team Profile Generator</title>
   </head>
   <body>
-    <h1 class="main-header">Team Profile</h1>
+    <h1 class="main-header">Team Profile <i class="fa-solid fa-people-line"></i></h1>
     <div class="main-container">
       ${info}
     </div>
