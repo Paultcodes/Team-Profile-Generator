@@ -58,17 +58,75 @@ continuePrompt = () => {
       } else if (optionData.option === "Engineer") {
         engineerPrompt();
       } else {
+        console.log(listOfWorkers);
         return;
       }
     });
 };
 
 internPrompt = () => {
-  console.log("they chose intern");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Interns name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Interns ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Interns email:",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "Interns school:",
+      },
+    ])
+    .then((internData) => {
+      const { name, id, email, school } = internData;
+      const intern = new Intern(name, id, email, school);
+      listOfWorkers.push(intern);
+      console.log(listOfWorkers);
+      continuePrompt();
+    });
 };
 
 engineerPrompt = () => {
-  console.log("They chose engineer");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Engineers name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Engineers ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Engineers email:",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "Engineers GitHub:",
+      },
+    ])
+    .then((engineerData) => {
+      const { name, id, email, github } = engineerData;
+      const engineer = new Engineer(name, id, email, github);
+      listOfWorkers.push(engineer);
+      continuePrompt();
+    });
 };
 
 managerPrompt();
