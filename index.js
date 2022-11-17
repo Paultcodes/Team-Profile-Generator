@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const html = require("./src/templateCode");
 
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
@@ -57,8 +58,8 @@ continuePrompt = () => {
       } else if (optionData.option === "Engineer") {
         engineerPrompt();
       } else {
-        console.log(listOfWorkers);
-        return;
+        let complete = html(listOfWorkers);
+        completeHtml(complete);
       }
     });
 };
@@ -125,6 +126,12 @@ engineerPrompt = () => {
       listOfWorkers.push(engineer);
       continuePrompt();
     });
+};
+
+completeHtml = (allInfo) => {
+  fs.writeFile("./dist/main.html", allInfo, (err) =>
+    err ? console.log(err) : console.log("file created")
+  );
 };
 
 managerPrompt();

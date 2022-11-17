@@ -2,20 +2,34 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #C1C8E4;
+    color: rgba(40, 40, 40, 0.831);
 }
 
 .main-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: px;
+  margin-top: 8%;
+}
+
+.main-header {
+  text-align: center;
+  margin-top: 15px;
 }
 
 .employee-card {
-  border: 1px solid;
+  border: none;
+  margin: 10px;
+  background-color: #5abaeace;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 200px;
   border-radius: 10px;
