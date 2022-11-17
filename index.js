@@ -37,7 +37,6 @@ managerPrompt = () => {
       const { name, id, email, officeNumber } = managerData;
       const manager = new Manager(name, id, email, officeNumber);
       listOfWorkers.push(manager);
-      console.log(manager);
       continuePrompt();
     });
 };
@@ -92,7 +91,6 @@ internPrompt = () => {
       const { name, id, email, school } = internData;
       const intern = new Intern(name, id, email, school);
       listOfWorkers.push(intern);
-      console.log(listOfWorkers);
       continuePrompt();
     });
 };
