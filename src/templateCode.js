@@ -28,7 +28,7 @@ generateEngineer = (engineer) => {
       engineer.email
     }" target="_blank">${engineer.email}</a>
         </p>
-    <p>GitHub: <a href="https://github.com/Paultcodes?tab=repositories">${engineer.getGithub()}</a></p>
+    <p>GitHub: <a href="${engineer.githubLink}">${engineer.getGithub()}</a></p>
   </div>`;
 };
 

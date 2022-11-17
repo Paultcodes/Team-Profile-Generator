@@ -116,13 +116,18 @@ engineerPrompt = () => {
       },
       {
         type: "input",
+        name: "githubLink",
+        message: "Paste the URL to your GitHub Profile",
+      },
+      {
+        type: "input",
         name: "github",
         message: "Engineers GitHub:",
       },
     ])
     .then((engineerData) => {
-      const { name, id, email, github } = engineerData;
-      const engineer = new Engineer(name, id, email, github);
+      const { name, id, email, githubLink, github } = engineerData;
+      const engineer = new Engineer(name, id, email, githubLink, github);
       listOfWorkers.push(engineer);
       continuePrompt();
     });
