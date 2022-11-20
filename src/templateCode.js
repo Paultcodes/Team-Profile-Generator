@@ -21,12 +21,12 @@ genHtml = (data) => {
 
 generateEngineer = (engineer) => {
   return `<div class="employee-card">
-    <h2>${engineer.name}</h2>
+    <h2>${engineer.getName()}</h2>
     <h3><i class="fa-solid fa-code"></i> ${engineer.getRole()}</h3>
-    <p>ID: ${engineer.id}</p>
+    <p>ID: ${engineer.getId()}</p>
     <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-      engineer.email
-    }" target="_blank">${engineer.email}</a>
+      engineer.getEmail()
+    }" target="_blank">${engineer.getEmail()}</a>
         </p>
     <p>GitHub: <a href="${engineer.githubLink}">${engineer.getGithub()}</a></p>
   </div>`;
@@ -34,12 +34,12 @@ generateEngineer = (engineer) => {
 
 generateIntern = (intern) => {
   return `<div class="employee-card">
-      <h2>${intern.name}</h2>
+      <h2>${intern.getName()}</h2>
       <h3><i class="fa-solid fa-user-graduate"></i> ${intern.getRole()}</h3>
-      <p>ID: ${intern.id}</p>
+      <p>ID: ${intern.getId()}</p>
       <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-        intern.email
-      }" target="_blank">${intern.email}</a>
+        intern.getEmail()
+      }" target="_blank">${intern.getEmail()}</a>
         </p>
       <p>School: ${intern.getSchool()}</p>
     </div>`;
@@ -47,14 +47,14 @@ generateIntern = (intern) => {
 
 generateManager = (manager) => {
   return `<div class="employee-card">
-        <h2>${manager.name}</h2>
+        <h2>${manager.getName()}</h2>
         <h3><i class="fa-solid fa-mug-hot"></i> ${manager.getRole()}</h3>
-        <p>ID: ${manager.id}</p>
+        <p>ID: ${manager.getId()}</p>
         <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-          manager.email
-        }" target="_blank">${manager.email}</a>
+          manager.getEmail()
+        }" target="_blank">${manager.getEmail()}</a>
         </p>
-        <p>Office Number: ${manager.officeNumber}</p>
+        <p>Office Number: ${manager.getOfficeNumber()}</p>
       </div>`;
 };
 

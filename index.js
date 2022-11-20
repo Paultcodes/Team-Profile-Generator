@@ -17,6 +17,14 @@ managerPrompt = () => {
         type: "input",
         name: "name",
         message: "Managers Name:",
+        validate: (checkName) => {
+          if (checkName) {
+            return true;
+          } else {
+            console.log("Please enter the managers name");
+            return false;
+          }
+        },
       },
       {
         type: "input",
@@ -37,6 +45,7 @@ managerPrompt = () => {
     .then((managerData) => {
       const { name, id, email, officeNumber } = managerData;
       const manager = new Manager(name, id, email, officeNumber);
+      console.log(typeof officeNumber);
       listOfWorkers.push(manager);
       continuePrompt();
     });
