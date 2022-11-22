@@ -1,5 +1,7 @@
 const Employee = require("../lib/Employee");
 
+//All tests for Employee class
+
 describe("Employee", () => {
   describe("create", () => {
     it("Should create a new employee", () => {

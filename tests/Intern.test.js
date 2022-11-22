@@ -1,5 +1,7 @@
 const Intern = require("../lib/Intern");
 
+//All tests for Intern class
+
 describe("Intern", () => {
   describe("create", () => {
     it("Should create a new intern", () => {

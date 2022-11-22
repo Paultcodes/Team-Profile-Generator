@@ -1,3 +1,4 @@
+// Looping through listOfWorkers array from index file and generating html cards depending on employees role
 genHtml = (data) => {
   let employeesHtmlCards = [];
   for (let i = 0; i < data.length; i++) {
@@ -18,46 +19,42 @@ genHtml = (data) => {
   let finalHtml = createHtml(joinedHtml);
   return finalHtml;
 };
-
+//Engineers html
 generateEngineer = (engineer) => {
   return `<div class="employee-card">
     <h2>${engineer.getName()}</h2>
     <h3><i class="fa-solid fa-code"></i> ${engineer.getRole()}</h3>
     <p>ID: ${engineer.getId()}</p>
-    <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-      engineer.getEmail()
-    }" target="_blank">${engineer.getEmail()}</a>
+    <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a>
         </p>
-    <p>GitHub: <a href="${engineer.githubLink}">${engineer.getGithub()}</a></p>
+    <p>GitHub: <a target=_blank href="${
+      engineer.githubLink
+    }">${engineer.getGithub()}</a></p>
   </div>`;
 };
-
+//Intern html
 generateIntern = (intern) => {
   return `<div class="employee-card">
       <h2>${intern.getName()}</h2>
       <h3><i class="fa-solid fa-user-graduate"></i> ${intern.getRole()}</h3>
       <p>ID: ${intern.getId()}</p>
-      <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-        intern.getEmail()
-      }" target="_blank">${intern.getEmail()}</a>
+      <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${intern.getEmail()}" target="_blank">${intern.getEmail()}</a>
         </p>
       <p>School: ${intern.getSchool()}</p>
     </div>`;
 };
-
+//Manager html
 generateManager = (manager) => {
   return `<div class="employee-card">
         <h2>${manager.getName()}</h2>
         <h3><i class="fa-solid fa-mug-hot"></i> ${manager.getRole()}</h3>
         <p>ID: ${manager.getId()}</p>
-        <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${
-          manager.getEmail()
-        }" target="_blank">${manager.getEmail()}</a>
+        <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${manager.getEmail()}" target="_blank">${manager.getEmail()}</a>
         </p>
         <p>Office Number: ${manager.getOfficeNumber()}</p>
       </div>`;
 };
-
+//HTML template with appended employee HTML
 createHtml = (info) => {
   return `<!DOCTYPE html>
 <html lang="en">
